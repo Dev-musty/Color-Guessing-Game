@@ -1,0 +1,692 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #072C34;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html{
+  font-size: 62.5%; 
+}
+/* ANIMATIONS */
+
+.open{
+  animation: appear 0.9s ease-out forwards;
+}
+.close{
+  animation: disappear 0.9s ease-out forwards;
+}
+@keyframes appear {
+  0%{
+    transform: translate(-50%, -500px);
+    
+  }
+  100%{
+    transform: translate(-50%,0);
+    scale: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    transform: translate(-50%,0);
+  
+  }
+  100% {
+    transform: translate(-50%, -1000px);
+
+  }
+
+}
+.notification-in{
+  animation: slideIn 0.8s ease-out forwards;
+}
+.notification-out{
+  animation: slideUp 0.8s ease-out forwards;
+}
+@keyframes slideIn {
+  0%{
+    transform: translate(-50%, -500px);
+
+  }
+  100%{
+    transform: translate(-50%,0);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, -500px); 
+  }
+}
+
+.color-change{
+  animation: change 0.9s ease-out forwards;
+}
+@keyframes change {
+  0% { 
+    scale: 0.5;
+  }
+  100%{
+    scale: 1;
+  }
+}
+i{
+  cursor: pointer;
+  color: white;
+}
+nav{
+  background-color: #300F2A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.5rem;
+  padding: 1.5rem;
+  color: white;
+}
+nav > div{
+  display: flex;
+  align-items: center;
+}
+nav  i{
+  margin-right: 1.5rem;
+}
+nav span{
+  background-color: #C25898;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+}
+.container{
+  max-width: 425px;
+  height: 90vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.container > div{
+  width: 90%;
+  border-radius: 15px;
+  box-shadow:0 0 10px white;
+}
+.container  p{
+  background-color: #C25898;
+  width: 40%;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin:0 auto 1rem;
+  padding: 0.9rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.target-box{
+  height: 200px;
+  width: 80%;
+  border-radius: 10px;
+  margin: 2rem auto;
+}
+.color-grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin:2rem auto;
+  justify-items: center;
+  gap: 10px;
+  width: 80%;
+}
+
+.color{
+  height: 90px;
+  width: 90px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.color-1{
+  border-top-left-radius: 10px;
+}
+.color-3{
+  border-top-right-radius: 10px;
+}
+.color-4{
+  border-bottom-left-radius: 10px;
+}
+.color-6{
+  border-bottom-right-radius: 10px;
+}
+
+/* INSTRUCTION STYLING */
+.instruction{
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(108, 20, 79, 0.774);
+  width: 90%;
+  height: 50%;
+  font-size: 1.5rem;
+}
+.instruction-container{
+  display: none;
+}
+.display-instruction{
+  display: inherit;
+  
+}
+
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  color: white;
+  border: 2px solid white;
+  padding: 3rem;
+}
+.content > i{
+  margin: 0 0 5rem 30rem;
+  font-size: 3rem;
+}
+.content > h2{
+  margin-bottom: 1.5rem;
+}
+ul{
+  line-height: 1.5;
+  color: white;
+  font-size: 2rem;
+}
+
+ul>p{
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/* Target colors */
+.target1-bg{
+  background-color: rgb(108, 20, 78);
+}
+.target2-bg{
+  background-color: rgb(15, 176, 169);
+}
+.target3-bg{
+  background-color: rgb(144, 84, 84);
+}
+.target4-bg{
+  background-color: rgb(149, 176, 187);
+}
+.target5-bg{
+  background-color: rgb(233, 194, 129);
+}
+.target6-bg{
+  background-color: rgb(69, 141, 103);
+}
+
+/* Shades */
+.target1-shade-1{
+  background-color:rgb(108, 20, 78); /* same as target1-bg */
+}
+.target1-shade-2{
+  background-color: rgb(218, 55, 163);
+}
+.target1-shade-3{
+  background-color: rgb(224, 86, 177);
+}
+.target1-shade-4{
+  background-color: rgb(235, 147, 205);
+}
+.target1-shade-5{
+  background-color: rgb(200, 37, 144);
+}
+.target1-shade-6{
+  background-color:rgb(46, 9, 33) ;
+}
+
+.target2-shade-1{
+  background-color: rgb(104, 242, 236)
+}
+.target2-shade-2{
+  background-color: rgb(15, 176, 169); /* same as target2-bg */
+}
+.target2-shade-3{
+  background-color: rgb(37, 236, 228); 
+}
+.target2-shade-4{
+  background-color:rgb(4, 50, 48) ;
+}
+.target2-shade-5{
+  background-color:rgb(10, 117, 113) ;
+}
+.target2-shade-6{
+  background-color: rgb(138, 245, 240);
+}
+
+.target3-shade-1{
+  background-color: rgb(98, 57, 57);  
+}
+.target3-shade-2{
+  background-color: rgb(187, 139, 139);  
+}
+.target3-shade-3{
+  background-color: rgb(144, 84, 84); /* same as target3-bg */
+}
+.target3-shade-4{
+  background-color: rgb(177, 121, 121);
+}
+.target3-shade-5{
+  background-color: rgb(160, 90, 100);
+}
+.target3-shade-6{
+  background-color: rgb(198, 157, 157);
+}
+
+.target4-shade-1{
+  background-color:rgb(108, 146, 161);
+}
+.target4-shade-2{
+  background-color: rgb(94, 131, 147);
+}
+.target4-shade-3{
+  background-color:rgb(72, 101, 112) ;
+}
+.target4-shade-4{
+  background-color:rgb(149, 176, 187) ; /* same as target4-bg */
+}
+.target4-shade-5{
+  background-color: rgb(50, 70, 78);
+}
+.target4-shade-6{
+  background-color: rgb(39, 54, 60);
+}
+
+.target5-shade-1{
+  background-color: rgb(236, 222, 146);
+}
+.target5-shade-2{
+  background-color: rgb(228, 179, 98);
+}
+.target5-shade-3{
+  background-color: rgb(219, 156, 50);
+}
+.target5-shade-4{
+  background-color: rgb(181, 125, 32);
+}
+.target5-shade-5{
+  background-color: rgb(233, 194, 129); /* same as target5-bg */
+}
+.target5-shade-6{
+  background-color: rgb(133, 92, 23);
+}
+
+.target6-shade-1{
+  background-color:rgb(150, 204, 176) ;
+}
+.target6-shade-2{
+  background-color: rgb(23, 48, 35);
+}
+.target6-shade-3{
+  background-color: rgb(131, 194, 161);
+}
+.target6-shade-4{
+  background-color: rgb(42, 86, 63);
+}
+.target6-shade-5{
+  background-color: rgb(131, 194, 161);
+}
+.target6-shade-6{
+  background-color: rgb(69, 141, 103);
+}
+
+/* GAME STATUS */
+.status{
+  color: white;
+  font-size: 2.5rem;
+}
+.win{
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #300F2A;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  height: 50px;
+  display: none;
+
+  width: 25%;
+}
+.status img{
+  width: 20%;
+  padding-bottom: 1rem;
+}
+.win-active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lose{
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #300F2A;
+  padding: 1rem;
+  border-radius: 5px;
+  display: none;
+}
+.lose-active{
+  display: inherit;
+}
+
+/*Game over style*/
+.game-over{
+  top: 25%;
+  text-align: center;
+  font-size: 5rem;
+  padding: 3rem;
+  color: white;
+  display: none;
+}
+.game-over-active{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.game-over > button{
+  display: block;
+  padding: 2rem;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.game-over>button:hover{
+  background-color: #300F2A;
+  color: white;
+}
+.game-over img{
+  width: 15%;
+  margin: 2rem 0;
+}
+
+@media(min-width: 320px){
+  .container{
+    max-width: 320px;
+  }
+  nav{
+    font-size: 1.5rem;
+  }
+  .color-grid{
+    width: 90%;
+  }
+  .color{
+    height: 80px;
+    width: 80px;
+  }
+  .instruction{
+    top: 10%;
+    height: 80%;
+  }
+  .content > i{
+    margin: 0 0 5rem 25rem;
+  }
+  .status{
+    font-size: 1.3rem;
+  }
+  .status img{
+    padding-bottom: 0.3rem;
+  }
+  .win{
+    width: 50%;
+    height: 30px;
+  }
+  .container  p{
+    width: 60%;
+  }
+  .target-box{
+    width: 90%;
+  }
+  .game-over{
+    font-size: 3rem;
+  }
+  .game-over > img{
+    width: 30%;
+  }
+  .game-over > button{
+    width: 70%;
+  }
+
+}
+@media(min-width: 600px){
+  .container{
+    max-width: 768px;
+  }
+  .container > div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  nav{
+    font-size: 3rem;
+  }
+  .color-grid{
+    width: 90%;
+    height: 100px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+    'box1 box2'
+    'box3 box4'
+    'box5 box6'
+    ;
+    
+  }
+  .color-1{
+    grid-area: box1;
+  }
+  .color-2{
+    grid-area: box3;
+  }
+  .color-3{
+    grid-area: box2;
+  }
+  .color-4{
+    grid-area: box5;
+  }
+  .color-5{
+    grid-area: box4;
+  }
+  .color-6{
+    grid-area: box6;
+  }
+  .color{
+    height: 90px;
+    width: 120px;
+  }
+  .instruction{
+    height: 60%;
+    font-size: 2.5rem;
+  }
+  ul{
+    font-size: 2.5rem;
+    padding: 2rem;
+  }
+  .content > i{
+    margin: 0 0 5rem 55rem;
+    font-size: 6rem;
+  }
+  .status{
+    font-size: 3rem;
+  }
+  .status img{
+    padding-bottom: 0.3rem;
+  }
+  .win{
+    width: 50%;
+    height: 50px;
+  }
+  .container  p{
+    grid-column: span 2;
+    width: 40%;
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+  .target-box{
+    width: 90%;
+    height: 300px;
+  }
+
+}
+@media(min-width: 1024px){
+  .container{
+    max-width: 900px;
+  }
+  nav{
+    font-size: 3.5rem;
+  }
+  .instruction{
+    top: 15%;
+    height: 80%;
+  }
+  .content > i{
+    margin: 0 0 5rem 80rem;
+    font-size: 6rem;
+  }
+  ul{
+    font-size: 3rem;
+  }
+  .win{
+    height: 70px;
+  }
+}
+@media(min-width: 1440px){
+  .container{
+    max-width: 1200px;
+  }
+  .container  p{
+    width: 35%;
+    font-size: 5rem;
+    margin-top: 2rem;
+  }
+  nav{
+    font-size: 5rem;
+  }
+  nav span{
+    background-color: #C25898;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+  }
+  .content > i{
+    margin: 5rem 0 10rem 110rem;
+    font-size: 10rem;
+  }
+  ul{
+    font-size: 4rem;
+  }
+  .status{
+    font-size: 4rem;
+  }
+  .win{
+    height: 90px;
+    width: 30%;
+  }
+  .lose{
+    padding: 1.5rem;
+  }
+  .color{
+    height: 160px;
+    width: 220px;
+  }
+  .target-box{
+    width: 90%;
+    height: 500px;
+  }
+  .game-over{
+    font-size: 5rem;
+  }
+  .game-over > button{
+    width: 50%;
+    font-size: 5rem;
+  }
+}
+@media(min-width: 2560px){
+  .container{
+    max-width: 2200px;
+  }
+  .container > div{
+    padding: 2rem;
+  }
+  .container  p{
+    width: 35%;
+    font-size: 9rem;
+    margin-top: 7rem;
+    padding: 4rem;
+    border-radius: 20px;
+  }
+  nav{
+    font-size: 9rem;
+    padding: 4rem;
+  }
+  nav span{
+    background-color: #C25898;
+    padding: 0.5rem 3rem;
+    border-radius: 15px;
+  }
+  .instruction{
+    font-size: 5rem;
+  }
+  .content > i{
+    margin: 5rem 0 20rem 200rem;
+    font-size: 15rem;
+  }
+  ul{
+    font-size: 7rem;
+  }
+  .status{
+    font-size: 8rem;
+  }
+  .win{
+    height: 100px;
+    width: 30%;
+  }
+  .lose{
+    padding: 2rem;
+  }
+  .color{
+    height: 320px;
+    width: 400px;
+  }
+  .color-1{
+    border-top-left-radius: 30px;
+  }
+  .color-3{
+    border-top-right-radius: 30px;
+  }
+  .color-4{
+    border-bottom-left-radius: 30px;
+  }
+  .color-6{
+    border-bottom-right-radius: 30px;
+  }
+  .target-box{
+    width: 90%;
+    height: 1000px;
+    border-radius: 30px;
+  }
+  .game-over{
+    font-size: 10rem;
+  }
+  .game-over > button{
+    width: 40%;
+    font-size: 10rem;
+  }
+}

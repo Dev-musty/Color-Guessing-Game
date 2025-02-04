@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Game</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/ab174e0070.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <nav>
+      <p class="chance"></p>
+      <div>
+        <i class="fa-solid fa-circle-info info"></i>
+        <p >Score: <span class="counter" data-testid="score">0</span></p>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="color-container">
+        <div class="target-box" data-testid="colorBox"></div>
+        <div class="color-grid">
+          <button class="color-1 color " data-testid="colorOption"
+          ></button>
+          <button class="color-2 color" data-testid="colorOption"
+          ></button>
+          <button class="color-3 color" data-testid="colorOption"
+          ></button>
+          <button class="color-4 color" data-testid="colorOption"
+          ></button>
+          <button class="color-5 color" data-testid="colorOption"
+          ></button>
+          <button class="color-6 color" data-testid="colorOption"
+          ></button>
+        </div>
+        <p class="reset" data-testid="newGameButton"><i class="fa-solid fa-rotate-right "></i>Reset Game</p>
+      </div>
+    </div>
+    <div class="instruction-container">
+      <div class="instruction">
+        <div class="content">
+          <i class="fa-solid fa-xmark remove"></i>
+          <h2>Game instructions</h2>
+          <ul>
+            <li data-testid="gameInstructions">Click the color that best matches the target color.</li>
+            <li data-testid="gameInstructions">You have 5 chances for incorrect guesses before the game ends.</li>
+            <p>Click on the info icon on the top right to review the instructions.</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="status">
+      <div class="win" data-testid="gameStatus">
+        <p >Excellent guess!</p>
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW9ja2k2MWM5bXdvbmlpY2Q2dzhjaTdydDc5YWp0ZmYwM2l4YXd1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1wX5TJZPqVw3HhyDYn/giphy.gif" data-testid="gameStatus" alt="">
+      </div>
+      <p class="lose" data-testid="gameStatus">Wrong guess! Try again!</p>
+    </div>
+    <div class="game-over instruction">
+      <p>Too bad... you lost the game!</p>
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWM3bzFjOGY4aG1wamwzc3lobXFhNGZlOXg0eGIza3Q3dDV0Z2RhNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jTez84PY7g0SrvE2iJ/giphy.gif" alt="">
+      <button class="restart">New Game</button>
+    </div>
+  <script src="./index.js"></script>
+  <script src="./index2.js"></script>
+</body>
+</html>
