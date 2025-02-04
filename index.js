@@ -62,7 +62,7 @@ const targetColorGeneration = () => {
   randomTargetColor = targetColorArray[Math.floor(Math.random() * targetColorArray.length)];
 
   // Set the background color for the target box
-  targetBox.classList.add(`${randomTargetColor}-bg`); // target3-bg
+  targetBox.classList.add(`${randomTargetColor}-bg`); 
 
   // Set the shades for the guess buttons
   guessColors.forEach((btn, index) => {
@@ -71,7 +71,7 @@ const targetColorGeneration = () => {
     btn.addEventListener('animationend', ()=>{
       btn.classList.remove('color-change');
     });
-    // target3-shade-1 | target3-shade-2
+    
   });
   targetBox.classList.add('color-change');
   targetBox.addEventListener('animationend', ()=>{
@@ -105,13 +105,11 @@ function guess() {
             winMessage.classList.remove('win-active');
             winMessage.classList.remove('notification-in');
             winMessage.classList.remove('notification-out');
-            
             animationRunning = false;
             isAnimationInProgress = false;
           }, { once: true });
         }, 1500);
       }
-      
       setTimeout (()=>{
         targetColorGeneration();
       },1500);
@@ -141,7 +139,6 @@ function guess() {
       saveRemainingLife();
     
     }
-    
     saveScore();
   });
 
@@ -155,8 +152,6 @@ saveRemainingLife();
 function saveScore() {
   localStorage.setItem('score', score);
 }
-
-
 
 function saveRemainingLife() {
   localStorage.setItem('life', JSON.stringify(life));
